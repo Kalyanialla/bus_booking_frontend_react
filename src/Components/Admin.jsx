@@ -168,7 +168,7 @@ export default function Admin() {
   // Fetch all buses
   const fetchBuses = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/buses/', {
+      const res = await axios.get('https://fullstack-backend-project-2.onrender.com/api/buses/', {
         headers: { Authorization: `Token ${token}` }
       });
       setBuses(res.data);
@@ -192,12 +192,12 @@ export default function Admin() {
     e.preventDefault();
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:8000/api/buses/${editingId}/`, formData, {
+        await axios.put(`https://fullstack-backend-project-2.onrender.com/api/buses/${editingId}/`, formData, {
           headers: { Authorization: `Token ${token}` }
         });
         toast.success('Bus updated successfully!');
       } else {
-        await axios.post('http://localhost:8000/api/buses/', formData, {
+        await axios.post('https://fullstack-backend-project-2.onrender.com/api/buses/', formData, {
           headers: { Authorization: `Token ${token}` }
         });
         toast.success('Bus added successfully!');

@@ -136,7 +136,7 @@ const UserBookings = ({ token, userId }) => {
         if (!window.confirm("Are you sure you want to cancel this booking?")) return;
 
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/booking/${bookingId}/`, {
+            await axios.delete(`https://fullstack-backend-project-2.onrender.com/api/booking/${bookingId}/`, {
                 headers: { Authorization: `Token ${token}` },
             });
 
