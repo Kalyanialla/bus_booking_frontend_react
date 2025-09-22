@@ -127,7 +127,7 @@ const BusSeats = ({ token }) => {
     }
     try {
       await axios.post(
-        "http://localhost:8000/api/booking/",
+        "https://fullstack-backend-project-2.onrender.com/api/booking/",
         { seat: seatId },
         {
           headers: {
