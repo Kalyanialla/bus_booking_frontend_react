@@ -235,7 +235,7 @@ export default function Admin() {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this bus?')) {
       try {
-        await axios.delete(`http://localhost:8000/api/buses/${id}/`, {
+        await axios.delete(`https://fullstack-backend-project-2.onrender.com/api/buses/${id}/`, {
           headers: { Authorization: `Token ${token}` }
         });
         toast.success('Bus deleted successfully!');

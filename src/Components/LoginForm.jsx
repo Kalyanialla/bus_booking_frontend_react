@@ -299,7 +299,7 @@ const LoginForm = ({ onLogin }) => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/login/', form);
+      const response = await axios.post('https://fullstack-backend-project-2.onrender.com/api/login/', form);
       const userData = response.data;
 
       localStorage.setItem('user', JSON.stringify(userData));

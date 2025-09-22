@@ -87,7 +87,7 @@ const UserBookings = ({ token, userId }) => {
             }
             try {
                 setIsLoading(true)
-                const response = await axios.get(`http://localhost:8000/api/user/${userId}/bookings/`, {
+                const response = await axios.get(`https://fullstack-backend-project-2.onrender.com/api/user/${userId}/bookings/`, {
                     headers: { Authorization: `Token ${token}` }
                 })
                 setBookings(response.data.bookings || response.data)

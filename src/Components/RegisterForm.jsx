@@ -74,7 +74,7 @@ const RegisterForm = () => {
     setIsLoading(true);
 
     try {
-      await axios.post('http://localhost:8000/api/register/', form);
+      await axios.post('https://fullstack-backend-project-2.onrender.com/api/register/', form);
 
       // Success toast
       toast.success('Registration successful! Redirecting to login...', {

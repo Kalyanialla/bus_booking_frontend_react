@@ -109,7 +109,7 @@ const BusSeats = ({ token }) => {
   useEffect(() => {
     const fetchBusDetails = async () => {
       try {
-        const response = await axios(`http://localhost:8000/api/buses/${busId}`)
+        const response = await axios(`https://fullstack-backend-project-2.onrender.com/api/buses/${busId}`)
         setBus(response.data)
         setSeats(response.data.seats || [])
       } catch (error) {

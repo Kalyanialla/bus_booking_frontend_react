@@ -219,7 +219,7 @@ const BusList = () => {
   useEffect(() => {
     const fetchBuses = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/buses/', {
+        const response = await axios.get('https://fullstack-backend-project-2.onrender.com/api/buses/', {
           headers: token ? { Authorization: `Token ${token}` } : {},
         });
         setBuses(response.data);
