@@ -1,0 +1,155 @@
+/* ===============================
+   Admin Dashboard Styles
+   =============================== */
+
+/* Variables */
+:root {
+  --primary-blue: #0f2b46;
+  --secondary-gold: #d4af37;
+  --accent-teal: #2a9d8f;
+  --neutral-white: #ffffff;
+  --neutral-light: #f8f9fa;
+  --neutral-gray: #6c757d;
+  --neutral-dark: #343a40;
+  --error-red: #e74c3c;
+  --success-green: #2ecc71;
+}
+
+/* Container */
+.admin-dashboard {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-blue), #1a3c5f);
+  color: var(--neutral-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.admin-dashboard h1 {
+  text-align: center;
+  color: var(--neutral-white);
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* Bus Form */
+.bus-form {
+  background: var(--neutral-white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.bus-form input {
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e5eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.bus-form input:focus {
+  border-color: var(--secondary-gold);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+}
+
+.bus-form button {
+  grid-column: span 2;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--secondary-gold), #e6c44c);
+  color: var(--primary-blue);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bus-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(212,175,55,0.4);
+}
+
+/* Bus List */
+.admin-bus-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.admin-bus-card {
+  background: var(--neutral-white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-bus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.admin-bus-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-blue);
+}
+
+.admin-bus-card p {
+  margin: 0;
+  color: var(--neutral-gray);
+  font-weight: 500;
+}
+
+/* Actions */
+.admin-bus-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.admin-bus-actions button {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-bus-actions button:first-child {
+  background: var(--accent-teal);
+  color: var(--neutral-white);
+}
+
+.admin-bus-actions button:first-child:hover {
+  background: #21867a;
+}
+
+.admin-bus-actions button:last-child {
+  background: var(--error-red);
+  color: var(--neutral-white);
+}
+
+.admin-bus-actions button:last-child:hover {
+  background: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bus-form {
+    grid-template-columns: 1fr;
+  }
+
+  .bus-form button {
+    grid-column: span 1;
+  }
+}

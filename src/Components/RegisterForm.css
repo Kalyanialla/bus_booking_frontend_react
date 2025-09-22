@@ -1,0 +1,316 @@
+/* RegisterForm.css */
+
+/* Color Variables */
+:root {
+  --primary-blue: #0f2b46;
+  --secondary-gold: #d4af37;
+  --accent-teal: #2a9d8f;
+  --neutral-white: #ffffff;
+  --neutral-light: #f8f9fa;
+  --neutral-gray: #6c757d;
+  --neutral-dark: #343a40;
+  --error-red: #e74c3c;
+  --success-green: #2ecc71;
+}
+
+/* Register Container */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3c5f 100%);
+  padding: 2rem;
+  padding-top: 100px; /* Account for fixed navbar */
+}
+
+/* Register Card */
+.register-card {
+  background-color: var(--neutral-white);
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Register Header */
+.register-header {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3c5f 100%);
+  color: var(--neutral-white);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.register-header::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: var(--neutral-white);
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 1;
+}
+
+.register-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.register-header p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Register Form */
+.register-form {
+  padding: 2.5rem 2rem 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e5eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--secondary-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* Register Button */
+.register-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--secondary-gold) 0%, #e6c44c 100%);
+  color: var(--primary-blue);
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+  margin-top: 1rem;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 15px rgba(212, 175, 55, 0.4);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.register-button.loading {
+  background: linear-gradient(135deg, #c19d2e 0%, #d4b450 100%);
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-blue);
+  animation: spin 1s ease-in-out infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Messages */
+.message {
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.message.success {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--success-green);
+  border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.message.success::before {
+  content: "✓";
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.message.error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--error-red);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.message.error::before {
+  content: "✗";
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* Register Footer */
+.register-footer {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  background-color: var(--neutral-light);
+  border-top: 1px solid #e1e5eb;
+}
+
+.register-footer p {
+  margin: 0;
+  color: var(--neutral-gray);
+}
+
+.register-footer a {
+  color: var(--secondary-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register-footer a:hover {
+  color: #c19d2e;
+  text-decoration: underline;
+}
+
+/* Password strength indicator */
+.password-strength {
+  margin-top: 0.5rem;
+  height: 5px;
+  background-color: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-weak {
+  background-color: #e74c3c;
+  width: 33%;
+}
+
+.strength-medium {
+  background-color: #f39c12;
+  width: 66%;
+}
+
+.strength-strong {
+  background-color: #2ecc71;
+  width: 100%;
+}
+
+.strength-text {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  text-align: right;
+  color: var(--neutral-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 1rem;
+    padding-top: 90px;
+  }
+  
+  .register-card {
+    border-radius: 8px;
+  }
+  
+  .register-header,
+  .register-form {
+    padding: 1.5rem;
+  }
+  
+  .register-header::after {
+    bottom: -12px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+/* role based css */
+.role-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.role-help {
+  display: block;
+  margin-top: 5px;
+  color: #666;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.input-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
